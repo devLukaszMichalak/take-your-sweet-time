@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "take-your-sweet-time"
+  },
+  "targets": {
+    "take-your-sweet-time": {
+      "hosting": {
+        "take-your-sweet-time": [
+          "take-your-sweet-time"
+        ]
+      }
+    }
+  }
+}
