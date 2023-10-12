@@ -30,7 +30,7 @@ jobs:
           command: npm run build --prod
       - run:
           name: Make keys file
-          command: echo ${PLANTS_KEYS} > keys.json
+          command: echo ${TIME_KEYS} > keys.json
       - run:
           name: Deploy to Firebase Hosting
           command: |
