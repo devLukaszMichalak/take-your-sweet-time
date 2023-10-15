@@ -1,0 +1,18 @@
+<div class="modal-header">
+    <h4>Create new project</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="dismiss()"></button>
+</div>
+
+<div class="modal-body d-flex flex-column gap-3" [formGroup]="newProjectForm">
+
+    <input placeholder="Name" class="form-control" formControlName="name">
+
+</div>
+
+<div class="modal-footer">
+    <button [disabled]="newProjectForm.invalid"
+            type="button"
+            class="btn btn-primary"
+            (click)="save()">Save
+    </button>
+</div>

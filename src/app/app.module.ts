@@ -12,14 +12,16 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NewProjectModalComponent } from './components/dashboard/new-project-modal/new-project-modal.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     DashboardComponent,
-    LoginComponent
+    LoginComponent,
+    NewProjectModalComponent
   ],
   imports: [
     BrowserModule,

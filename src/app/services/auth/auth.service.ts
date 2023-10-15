@@ -15,6 +15,14 @@ export class AuthService {
     return signOut(this.auth).then(() => {this.currentUserCredential = null;})
   }
   
+  getCurrentUser(): User {
+    if (this.currentUserCredential) {
+      return this.currentUserCredential.user;
+    } else {
+      throw new Error("No user when one was expected!")
+    }
+  }
+  
   isAuthenticated = (): boolean => this.currentUserCredential !== null;
   
   logInUser(email: string, password: string) {
