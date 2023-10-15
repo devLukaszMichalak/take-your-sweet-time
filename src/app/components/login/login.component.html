@@ -1,1 +1,50 @@
-<p>login works!</p>
+<div class="d-flex justify-content-center align-items-center h-100 w-100">
+    <div class="card-group">
+        <div class="card">
+            <div class="card-header">Log in</div>
+
+            <div class="card-body" [formGroup]="logInForm" (keyup.enter)="logIn()">
+                <input type="email" placeholder="E-mail" aria-label="E-mail" class="form-control mb-3" formControlName="email">
+                <input type="password" placeholder="Password" aria-label="Password" class="form-control"
+                       formControlName="password">
+
+                <div *ngIf="logInFailed" class="alert alert-danger mt-3" role="alert">
+                    <span><i class="bi bi-exclamation-circle"></i> Failed to log in.</span>
+                </div>
+
+            </div>
+
+            <div class="card-footer text-end">
+                <button type="button" class="btn btn-primary"
+                        [disabled]="!logInForm.valid"
+                        (click)="logIn()"><i class="bi bi-arrow-right-circle"></i> Log in
+                </button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">Sign up</div>
+
+            <div class="card-body" [formGroup]="signUpForm" (keyup.enter)="signUp()">
+                <input type="email" placeholder="E-mail" aria-label="E-mail" class="form-control mb-3" formControlName="email">
+                <input type="password" placeholder="Password" aria-label="Password" class="form-control mb-3"
+                       formControlName="password">
+                <input type="password" placeholder="Repeat password" aria-label="Repeat password" class="form-control"
+                       formControlName="repeatPassword">
+
+                <div *ngIf="signUpFailed" class="alert alert-danger mt-3" role="alert">
+                    <span><i class="bi bi-exclamation-circle"></i> Failed to sign up.</span>
+                </div>
+
+            </div>
+
+            <div class="card-footer text-end">
+                <button type="button" class="btn btn-primary"
+                        [disabled]="!signUpForm.valid"
+                        (click)="signUp()"><i class="bi bi-box-arrow-in-up-right"></i> Sign up
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>

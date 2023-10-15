@@ -1,5 +1,9 @@
 <nav class="navbar bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand">Navbar</a>
+        <a class="navbar-brand" href="#">Take your sweet time</a>
+        <button class="btn btn-primary"
+                *ngIf="isAuthenticated()"
+                (click)="logout()">Logout
+        </button>
     </div>
 </nav>
