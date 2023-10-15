@@ -34,7 +34,7 @@ export class DashboardComponent {
       .pipe(take(1))
       .subscribe(name => {
         if (name) {
-          const projectToSave = new Project(null, new Date, name, this.currentUser.email!, 0);
+          const projectToSave = new Project(null, null, name, this.currentUser.email!, 0);
           
           this.projectService.saveProject(projectToSave).then();
         }
