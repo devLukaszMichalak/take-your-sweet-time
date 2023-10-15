@@ -3,6 +3,7 @@ import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn,
 import { AuthService } from '../../services/auth/auth.service';
 import { Router } from '@angular/router';
 import { getRouterLink, PageRouts } from '../../routing/pages';
+import { faExclamationCircle, faRightToBracket, faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,10 @@ export class LoginComponent {
   
   private authService = inject(AuthService);
   private router = inject(Router)
+  
+  protected readonly faExclamationCircle = faExclamationCircle;
+  protected readonly faRightToBracket = faRightToBracket;
+  protected readonly faUpRightFromSquare = faUpRightFromSquare;
   
   signUpFailed: boolean = false;
   logInFailed: boolean = false;

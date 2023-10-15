@@ -9,7 +9,7 @@
                        formControlName="password">
 
                 <div *ngIf="logInFailed" class="alert alert-danger mt-3" role="alert">
-                    <span><i class="bi bi-exclamation-circle"></i> Failed to log in.</span>
+                    <span><fa-icon [icon]="faExclamationCircle"></fa-icon> Failed to log in.</span>
                 </div>
 
             </div>
@@ -17,7 +17,7 @@
             <div class="card-footer text-end">
                 <button type="button" class="btn btn-primary"
                         [disabled]="!logInForm.valid"
-                        (click)="logIn()"><i class="bi bi-arrow-right-circle"></i> Log in
+                        (click)="logIn()"><fa-icon [icon]="faRightToBracket"></fa-icon> Log in
                 </button>
             </div>
         </div>
@@ -33,7 +33,7 @@
                        formControlName="repeatPassword">
 
                 <div *ngIf="signUpFailed" class="alert alert-danger mt-3" role="alert">
-                    <span><i class="bi bi-exclamation-circle"></i> Failed to sign up.</span>
+                    <span><fa-icon [icon]="faExclamationCircle"></fa-icon> Failed to sign up.</span>
                 </div>
 
             </div>
@@ -41,7 +41,7 @@
             <div class="card-footer text-end">
                 <button type="button" class="btn btn-primary"
                         [disabled]="!signUpForm.valid"
-                        (click)="signUp()"><i class="bi bi-box-arrow-in-up-right"></i> Sign up
+                        (click)="signUp()"><fa-icon [icon]="faUpRightFromSquare"></fa-icon> Sign up
                 </button>
             </div>
 
