@@ -55,13 +55,29 @@ export class DashboardComponent implements OnInit, OnDestroy {
       });
   }
   
+  changeTimerStatus(project: Project) {
+    if (project.startTimer) {
+      const totalTimeWithCalculatedTime = this.getTotalTimeWithCalculated(this.currentDate, project);
+      const updatedProject = new Project(project.id, null, project.name, project.owner, totalTimeWithCalculatedTime)
+      this.projectService.updateProject(updatedProject).then();
+    } else {
+      const updatedProject = new Project(project.id, new Date(), project.name, project.owner, project.totalTimeInSeconds + 1)
+      this.projectService.updateProject(updatedProject).then();
+    }
+  }
+  
   getTimeToDisplay(project: Project, currentDate: Date): string {
     if (project.startTimer) {
-      const differenceInMilliseconds = currentDate.getTime() - project.startTimer.getTime();
-      return this.formatTime(project.totalTimeInSeconds + Math.floor(differenceInMilliseconds / 1000));
+      const totalTimeWithCalculatedTime = this.getTotalTimeWithCalculated(currentDate, project);
+      return this.formatTime(totalTimeWithCalculatedTime);
     }
     
     return this.formatTime(project.totalTimeInSeconds);
+  }
+  
+  private getTotalTimeWithCalculated(currentDate: Date, project: Project) {
+    const differenceInMilliseconds = currentDate.getTime() - (project?.startTimer ? project.startTimer.getTime() : new Date(0).getTime());
+    return project.totalTimeInSeconds + Math.floor(differenceInMilliseconds / 1000);
   }
   
   private formatTime(seconds: number): string {
