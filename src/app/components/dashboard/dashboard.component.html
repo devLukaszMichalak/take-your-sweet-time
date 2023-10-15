@@ -2,7 +2,8 @@
 
     <ng-container *ngIf="projects$ | async as projects else loading">
         <button *ngFor="let project of projects" type="button"
-                class="btn btn-secondary w-75">{{project.name}} – 00:00:00</button>
+                [ngClass]="project.startTimer ? 'btn-success' : 'btn-secondary'"
+                class="btn w-75">{{project.name}} – {{getTimeToDisplay(project, this.currentDate)}}</button>
 
         <button type="button" class="btn btn-primary w-75"
          (click)="addProject()"><fa-icon [icon]="faCirclePlus"></fa-icon></button>

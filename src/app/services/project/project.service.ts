@@ -31,7 +31,20 @@ export class ProjectService {
     const queryFn: Query = query(this.projectsCollection, where('owner', '==', owner));
     
     return collectionData(queryFn, {idField: 'id'})
-      .pipe(map((projects: DocumentData[]) => projects.map((project: DocumentData) => project as Project)));
+      .pipe(map((projects: DocumentData[]) => projects
+        .map(project => {
+          if (project['startTimer']) {
+            project['startTimer'] = this.timestampToJsDate(project['startTimer']);
+          }
+          
+          return project;
+        })
+        .map((project: DocumentData) => project as Project)));
+  }
+  
+  private timestampToJsDate(timestamp: { seconds: number, nanoseconds: number }) {
+    const milliseconds = timestamp.seconds * 1000 + timestamp.nanoseconds / 1000000;
+    return new Date(milliseconds);
   }
   
 }
