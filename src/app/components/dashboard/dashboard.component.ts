@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
   private modalService = inject(NgbModal);
   private currentUser: User = inject(AuthService).getCurrentUser();
   private projectDeleteSubject$: Subject<Project> = new Subject<Project>();
-  private stopHolding$ = fromEvent(document, 'touchend');
+  private stopHolding$ = fromEvent(document, 'pointerup');
   
   protected currentDate: Date = new Date;
   protected projects$: Observable<Project[]> = this.projectService.getProjects(this.currentUser.email!);
