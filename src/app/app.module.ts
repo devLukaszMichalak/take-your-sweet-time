@@ -13,7 +13,8 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { NewProjectModalComponent } from './components/dashboard/new-project-modal/new-project-modal.component'
+import { NewProjectModalComponent } from './components/dashboard/new-project-modal/new-project-modal.component';
+import { ConfirmModalComponent } from './components/common/confirm-modal/confirm-modal.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NewProjectModalComponent } from './components/dashboard/new-project-mod
     NavbarComponent,
     DashboardComponent,
     LoginComponent,
-    NewProjectModalComponent
+    NewProjectModalComponent,
+    ConfirmModalComponent
   ],
   imports: [
     BrowserModule,

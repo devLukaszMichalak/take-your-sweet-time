@@ -3,6 +3,7 @@
     <ng-container *ngIf="projects$ | async as projects else loading">
         <button *ngFor="let project of projects" type="button"
                 [ngClass]="project.startTimer ? 'btn-success' : 'btn-secondary'"
+                (mousedown)="holdForDelete(project)"
                 (click)="changeTimerStatus(project)"
                 class="btn w-75">{{project.name}} – {{getTimeToDisplay(project, this.currentDate)}}</button>
 

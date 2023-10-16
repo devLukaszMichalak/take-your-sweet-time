@@ -1,0 +1,20 @@
+<div class="modal-header">
+    <h4>Delete project</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="dismiss()"></button>
+</div>
+
+<div class="modal-body d-flex flex-column gap-3">
+    <span [innerHTML]="message"></span>
+</div>
+
+<div class="modal-footer">
+    <button type="button"
+            class="btn btn-danger"
+            (click)="confirm()">Confirm
+    </button>
+
+    <button type="button"
+            class="btn btn-light"
+            (click)="dismiss()">Cancel
+    </button>
+</div>
