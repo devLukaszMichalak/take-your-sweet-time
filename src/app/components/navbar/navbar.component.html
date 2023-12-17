@@ -1,9 +1,21 @@
-<nav class="navbar bg-light">
+<nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Take your sweet time</a>
-        <button class="btn btn-primary"
-                *ngIf="isAuthenticated()"
-                (click)="logout()"><fa-icon [icon]="faPowerOff"></fa-icon> Logout
-        </button>
+
+        <div class="d-flex gap-2">
+            <button class="btn btn-primary"
+                    *ngIf="isDarkMode()"
+                    (click)="setLightMode()"><fa-icon [icon]="faSun"></fa-icon> Light mode
+            </button>
+            <button class="btn btn-primary"
+                    *ngIf="!isDarkMode()"
+                    (click)="setDarkMode()"><fa-icon [icon]="faMoon"></fa-icon> Dark mode
+            </button>
+
+            <button class="btn btn-primary"
+                    *ngIf="isAuthenticated()"
+                    (click)="logout()"><fa-icon [icon]="faPowerOff"></fa-icon> Logout
+            </button>
+        </div>
     </div>
 </nav>
