@@ -1,27 +1,11 @@
-# TakeYourSweetTime
+# Take Your Sweet Time
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.5.
+A simple to-do like app to keep track of the time you spend on a given project. Does not have to be running in the backgroud – just start the timer and forget it.
 
-## Development server
+https://take-your-sweet-time.web.app
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Screenshots of the app
+<img src="https://github.com/devLukaszMichalak/take-your-sweet-time/assets/48216995/be50b5a5-63e5-4da8-89c8-633e8f7afe59" width="600">
+<img src="https://github.com/devLukaszMichalak/take-your-sweet-time/assets/48216995/bad5a9c5-4033-485a-a208-4cd943d49135" width="600">
+<img src="https://github.com/devLukaszMichalak/take-your-sweet-time/assets/48216995/2c099850-27ae-40e2-b12d-04a6457c426f" width="600">
+<img src="https://github.com/devLukaszMichalak/take-your-sweet-time/assets/48216995/f385a729-f41f-4c35-9177-763c8bfcc78c" width="600">
